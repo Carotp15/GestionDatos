@@ -45,3 +45,15 @@ GROUP BY EmployeeDepartmentHistory.BusinessEntityID, FirstName, LastName
 HAVING COUNT(EmployeeDepartmentHistory.BusinessEntityID) = 1;
 
 -- R: 285 personas no han cambiado de departamento a lo largo de su historia laboral.
+
+-- 6 ¿Cuál es el nombre del producto que más se ha vendido? 
+
+-- 7 ¿Cuál es la cantidad total de productos que se encuentran ubicados en la localización de 'Metal Storage'?
+
+Select Count(ProductInventory.LocationID), Location.Name from Production.ProductInventory 
+join Production.Location
+On ProductInventory.LocationID = Location.LocationID
+Where ProductInventory.LocationID = '5'
+Group by ProductInventory.LocationID, Location.Name
+
+-- R: Hay 51 productos que se encuentran ubicados en Metal Storage.

@@ -35,3 +35,13 @@ Select COUNT(*) from HumanResources.Employee
 where JobTitle != 'Research and Development Engineer' and MaritalStatus = 'M'
 
 -- 4 Mostrar listado de empleados que se encuentran en el departamento de ventas y mercadeo, residen en el estado de Colorado y no han realizado ventas.
+
+-- 5 ¿Cuántos y cuáles empleados no han cambiado de departamento a lo largo de su historia laboral?
+
+SELECT EmployeeDepartmentHistory.BusinessEntityID, FirstName, LastName FROM HumanResources.EmployeeDepartmentHistory
+join Person.Person p
+on EmployeeDepartmentHistory.BusinessEntityID = p.BusinessEntityID
+GROUP BY EmployeeDepartmentHistory.BusinessEntityID, FirstName, LastName
+HAVING COUNT(EmployeeDepartmentHistory.BusinessEntityID) = 1;
+
+-- R: 285 personas no han cambiado de departamento a lo largo de su historia laboral.

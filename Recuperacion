@@ -28,3 +28,10 @@ select ProductCostHistory.ProductID, Name, ProductCostHistory.StandardCost,Produ
 join Production.Product
 on ProductCostHistory.ProductID = Product.ProductID 
 where ProductCostHistory.ModifiedDate = '2013-05-16' 
+
+-- 3 ¿Cuántos empleados que no tienen el título de ingenieros de desarrollo e investigación están casados?
+
+Select COUNT(*) from HumanResources.Employee
+where JobTitle != 'Research and Development Engineer' and MaritalStatus = 'M'
+
+-- 4 Mostrar listado de empleados que se encuentran en el departamento de ventas y mercadeo, residen en el estado de Colorado y no han realizado ventas.

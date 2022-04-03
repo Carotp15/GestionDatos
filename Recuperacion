@@ -57,3 +57,5 @@ Where ProductInventory.LocationID = '5'
 Group by ProductInventory.LocationID, Location.Name
 
 -- R: Hay 51 productos que se encuentran ubicados en Metal Storage.
+
+-- 8 ¿Cuantós empleados que trabajan en el turno de noche, han realizado ventas superiores a 865.204?

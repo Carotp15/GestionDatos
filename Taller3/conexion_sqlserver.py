@@ -24,8 +24,8 @@ try:
     with conexion.cursor() as cursor:
 
         consulta = "UPDATE Album SET Title = ? WHERE AlbumId = ?;"
-        nuevo_album = "Avant"
-        id_nuevo = 347
+        nuevo_album = "KaiKaiKitan"
+        id_nuevo = 346
         cursor.execute(consulta, (nuevo_album, id_nuevo))
     conexion.commit()
 
